@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Title{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="container">
+  <header>
+    <h1>{% block heading %}{% endblock %}</h1>
+    <nav>
+      <ul>
+
+        <li><a href="{% url 'blogkulinarny' %}">Blog</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}">Wyloguj</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

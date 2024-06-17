@@ -1,0 +1,60 @@
+{% extends 'basestronablog.html' %}
+
+{% block title %}Blog Kulinarny{% endblock %}
+{% block heading %}BLOG KULINARNY{% endblock %}
+
+{% block content %}
+    <a href="{% url 'strona_glowna' %}">Strona główna</a>
+    <form method="GET" action="{% url 'blogkulinarny' %}">
+        <input type="text" name="q" value="{{ query }}" placeholder="Szukaj publikacji...">
+        <button type="submit" class="btn">Szukaj</button>
+    </form>
+    <ul>
+      {% for publication in publications %}
+      <li class="card">
+        <h2><a href="{% url 'publication_detail' publication.id %}">{{ publication.name }}</a></h2>
+        <p>{{ publication.pdate }}</p>
+        <p>autor: {{ publication.author.firstname }}</p>
+        {% if publication.image %}
+        <a href="{% url 'publication_detail' publication.id %}"><img src="{{ publication.image.url }}" alt="{{ publication.name }}"></a>
+        {% endif %}
+        <p>{{ publication.content|truncatewords:20 }}</p>
+        <p>lajków: {{ publication.like_count }}</p>
+
+        {% if user.is_authenticated %}
+          {% if publication.liked_by_current_user %}
+            <form action="{% url 'remove_like' publication.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn">usunąc like</button>
+            </form>
+            <p>like ustwiony</p>
+          {% else %}
+            <form action="{% url 'add_like' publication.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn">like</button>
+            </form>
+            <p>like jeszcze nie ustawiony</p>
+          {% endif %}
+
+          <form action="{% url 'add_comment' publication.id %}" method="post">
+            {% csrf_token %}
+            <textarea name="text" required></textarea>
+            <button type="submit" class="btn">dodać komentarz</button>
+          </form>
+        {% endif %}
+
+        <h3>komentarze:</h3>
+        <ul>
+          {% for comment in publication.comments %}
+          <li>
+            <p>{{ comment.user.firstname }}: {{ comment.text }}</p>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+    <li><a href="{% url 'blogkulinarny' %}">powrót do początku</a></li>
+  {% endblock %}
+</body>
+</html>

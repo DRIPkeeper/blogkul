@@ -1,0 +1,10 @@
+{% extends 'basestronablog.html' %}
+
+{% block content %}
+  <h2 style="text-align: center;">Rejestracja</h2>
+  <form method="post" style="text-align: center;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn">Zarejestruj się</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+h1, h2, h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+a {
+  color: #f0ad4e;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #e0a21a; /* Темно-желтый цвет при наведении */
+}
+
+
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 2px solid #f0ad4e; /* Желтая граница для кнопок */
+  border-radius: 5px;
+  color: #f0ad4e; /* Желтый цвет текста кнопок */
+  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #f0ad4e; /* Желтый фон при наведении */
+  color: #fff; /* Белый цвет текста при наведении */
+}
+
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+  margin-bottom: 20px;
+  padding: 30px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.card-body {
+  padding: 20px;
+}
