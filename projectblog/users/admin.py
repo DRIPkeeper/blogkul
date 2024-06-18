@@ -4,10 +4,11 @@ from django.contrib.auth.models import Group
 from .models import User
 from .forms import UserCreationForm, UserChangeForm
 
+# Konfiguracja panelu administracyjnego dla modelu User
 class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
-
+    # Pola wyświetlane w widoku listy użytkowników
     list_display = ('email', 'firstname', 'lastname', 'phone', 'is_admin')
     list_filter = ('is_admin',)
     fieldsets = (
@@ -23,7 +24,7 @@ class UserAdmin(BaseUserAdmin):
     )
     search_fields = ('email',)
     ordering = ('email',)
-    filter_horizontal = ()
+    filter_horizontal = () # Brak pól do filtrowania w poziomie
 
-admin.site.register(User, UserAdmin)
-admin.site.unregister(Group)
+admin.site.register(User, UserAdmin) # Rejestracja modelu User i jego konfiguracji w panelu administracyjnym
+admin.site.unregister(Group) # Wyrejestrowanie modelu Group, ponieważ nie jest używany

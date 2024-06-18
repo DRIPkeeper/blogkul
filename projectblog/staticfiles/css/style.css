@@ -1,84 +1,88 @@
+/* Ogólne ustawienia dla całego dokumentu */
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; /* Ustawienie rodziny czcionek */
   background-color: #f8f9fa;
   color: #333;
-  margin: 0;
+  margin: 0; /* Zerowanie marginesów */
 }
 
+/* Kontener główny */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 1200px; /* Maksymalna szerokość kontenera */
+  margin: 0 auto; /* Automatyczne wyśrodkowanie */
+  padding: 20px; /* Wewnętrzny padding */
 }
 
-
+/* Nagłówki */
 h1, h2, h3 {
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Margines dolny */
 }
 
-
+/* Linki */
 a {
   color: #f0ad4e;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  text-decoration: none; /* Brak podkreślenia */
+  transition: color 0.3s ease; /* Płynna zmiana koloru */
 }
 
 a:hover {
-  color: #e0a21a; /* Темно-желтый цвет при наведении */
+  color: #e0a21a; /* Ciemnożółty kolor po najechaniu myszką */
 }
 
-
+/* Przyciski */
 .btn {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: bold;
+  display: inline-block; /* Blokowy element inline */
+  font-size: 14px; /* Rozmiar czcionki */
+  font-weight: bold; /* Pogrubienie */
   padding: 10px 20px;
-  text-align: center;
+  text-align: center; /* Wyśrodkowanie tekstu */
   text-transform: uppercase;
-  cursor: pointer;
-  border: 2px solid #f0ad4e; /* Желтая граница для кнопок */
-  border-radius: 5px;
-  color: #f0ad4e; /* Желтый цвет текста кнопок */
-  background-color: transparent;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  cursor: pointer; /* Kursor wskaźnika */
+  border: 2px solid #f0ad4e; /* Żółta ramka dla przycisków */
+  border-radius: 5px; /* Zaokrąglenie rogów */
+  color: #f0ad4e;
+  background-color: transparent; /* Przezroczysty tło */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Płynne animacje */
 }
 
 .btn:hover {
-  background-color: #f0ad4e; /* Желтый фон при наведении */
-  color: #fff; /* Белый цвет текста при наведении */
+  background-color: #f0ad4e; /* Żółte tło po najechaniu myszką */
+  color: #fff; /* Biały kolor tekstu po najechaniu myszką */
 }
 
-
+/* Pola formularza */
 .form-control {
-  width: 100%;
+  width: 70%; /* Pełna szerokość */
   padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  font-size: 14px; /* Rozmiar czcionki */
+  border: 1px solid #ccc; /* Szara ramka */
+  border-radius: 5px; /* Zaokrąglenie rogów */
 }
 
-
+/* Publikacji */
 .card {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s;
+  border: 1px solid #ccc; /* Szara ramka */
+  border-radius: 5px; /* Zaokrąglenie rogów */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Cień */
+  transition: box-shadow 0.3s; /* Płynna animacja cienia */
   margin-bottom: 20px;
   padding: 30px;
 }
 
 .card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Większy cień po najechaniu myszką */
 }
 
+/* Obrazek w publikacji */
 .card-img-top {
-  width: 100%;
-  height: auto;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  width: 100%; /* Pełna szerokość */
+  height: auto; /* Automatyczna wysokość */
+  border-top-left-radius: 5px; /* Zaokrąglenie górnego lewego rogu */
+  border-top-right-radius: 5px; /* Zaokrąglenie górnego prawego rogu */
 }
 
+/* Treść karty */
 .card-body {
   padding: 20px;
 }
